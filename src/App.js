@@ -2,6 +2,9 @@ import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTaskForm from './components/AddTaskForm';
 import {useState} from 'react';
+import styled, {ThemeProvidder} from 'styled-components';
+import {FaMoon, FaLightbulb} from 'react-icons/fa'
+import './themes'
 
 function App() {
 
@@ -45,6 +48,7 @@ function App() {
 
   return (
     <div className='container'>
+      <FaLightbulb style={{color:"yellow", float:"right"}} /> <FaMoon style={{color:"purple"}} />
      <Header title={"Tasks Tracker"} toggleShowForm={toggleShowForm} showForm={showForm}/>
      {showForm && <AddTaskForm addTask={addTask}/>}
      <Tasks tasks={tasks} deleteTask = {deleteTask} toggleReminder={toggleReminder} />
